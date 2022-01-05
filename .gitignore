@@ -2,3 +2,5 @@ container/node_modules
 auth/node_modules
 dashboard/node_modules
 marketing/node_modules
+
+.DS_Store
