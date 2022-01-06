@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const commonConfig = require("./webpack.common");
+const packegeJson = require("../package.json");
 
 const devConfig = {
   mode: "development",
@@ -18,6 +19,7 @@ const devConfig = {
       remotes: {
         marketing: "marketing@http://localhost:8082/remoteEntry.js",
       },
+      shared: packegeJson.dependencies,
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
